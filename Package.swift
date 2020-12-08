@@ -25,5 +25,6 @@ let package = Package(
         .testTarget(
             name: "JKPlayerTests",
             dependencies: ["JKPlayer"]),
-    ]
+    ],
+    swiftLanguageVersions: [.v5]
 )
