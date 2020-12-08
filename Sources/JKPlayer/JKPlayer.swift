@@ -25,6 +25,11 @@ open class JKPlayer: AVPlayer {
         }
     }
     
+    public var currentTime: Int {
+        guard let item = self.currentItem else { return 0 }
+        return Int(CMTimeGetSeconds(item.currentTime()))
+    }
+    
     public var totalTime: Int {
         
         guard let item = self.currentItem else { return 0 }
