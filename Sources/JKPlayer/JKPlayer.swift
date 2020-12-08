@@ -2,7 +2,7 @@ import UIKit
 import AVKit
 
 
-public class JKPlayer: AVPlayer {
+open class JKPlayer: AVPlayer {
     
     
     /// 播放状态
@@ -25,7 +25,7 @@ public class JKPlayer: AVPlayer {
         }
     }
     
-    var totalTime: Int {
+    public var totalTime: Int {
         
         guard let item = self.currentItem else { return 0 }
         return Int(CMTimeGetSeconds(item.duration))
@@ -159,8 +159,8 @@ public class JKPlayer: AVPlayer {
     }
     
     
-    static let playStatusDidChangeNoticeName: NSNotification.Name = NSNotification.Name(rawValue: "JKPlayer.playStatusDidChange")
-    static let timeDidChangeNoticeName: NSNotification.Name = NSNotification.Name(rawValue: "JKPlayer.timeDidChangeNoticeName")
+    public static let playStatusDidChangeNoticeName: NSNotification.Name = NSNotification.Name(rawValue: "JKPlayer.playStatusDidChange")
+    public static let timeDidChangeNoticeName: NSNotification.Name = NSNotification.Name(rawValue: "JKPlayer.timeDidChangeNoticeName")
     
 }
 
